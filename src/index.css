@@ -1,3 +1,16 @@
 button {
 	cursor: pointer;
 }
+.app {
+	background-color: aqua;
+	width: 60%;
+	margin: auto;
+	/* overflow: hidden; */
+}
+.home {
+	width: 100%;
+}
+input {
+	display: block;
+	width: 97.6%;
+}
