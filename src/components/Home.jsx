@@ -1,10 +1,10 @@
-import { useState } from "react";
 import axios from "axios";
 import { useRef, useContext } from "react";
 import { studentContext } from "./studentContext";
 const Home = () => {
 	const name = useRef();
 	const { setStudent } = useContext(studentContext);
+
 	const handleSubmit = (e) => {
 		const nameValue = name.current.value;
 		e.preventDefault();
@@ -18,10 +18,27 @@ const Home = () => {
 		};
 		fitlterData();
 	};
+
+	const debounce = (func, delay) => {
+		let timeoutId;
+		return (...args) => {
+			clearTimeout(timeoutId);
+			timeoutId = setTimeout(() => {
+				func(...args);
+			}, delay);
+		};
+	};
+
+	const debounceHandleSubmit = debounce(handleSubmit, 400);
 	return (
 		<div className="home">
 			<form action="" onSubmit={handleSubmit}>
-				<input type="text" placeholder="Search..." ref={name} />
+				<input
+					type="text"
+					placeholder="Search..."
+					ref={name}
+					onChange={debounceHandleSubmit}
+				/>
 				<button type="submit">Search</button>
 			</form>
 		</div>
