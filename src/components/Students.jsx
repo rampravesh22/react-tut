@@ -5,13 +5,13 @@ const Students = () => {
 	const [students, setStudents] = useState([]);
 	const [next, setNext] = useState("");
 	const [previous, setPrevious] = useState("");
+	const [pageCount, setPageCount] = useState(null);
 	useEffect(() => {
 		const getStudents = async () => {
 			try {
 				const response = await axios.get(URL);
 				setNext(response.data.next);
-				console.log(response.data);
-
+				setPageCount(response.data.count);
 				setPrevious(response.data.previous);
 				setStudents(response.data.results);
 			} catch (error) {}
@@ -40,6 +40,7 @@ const Students = () => {
 		};
 		getStudents();
 	};
+	console.log(pageCount);
 	return (
 		<div className="student">
 			<ul>
@@ -51,6 +52,8 @@ const Students = () => {
 				<button onClick={handlePrevious} disabled={!previous ? true : null}>
 					Previous
 				</button>
+				<button onClick={()=>}></button>
+
 				<button onClick={handleNext} disabled={!next ? true : null}>
 					Next
 				</button>
