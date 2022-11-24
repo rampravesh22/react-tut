@@ -40,7 +40,6 @@ const Students = () => {
 		};
 		getStudents();
 	};
-	console.log(pageCount);
 	return (
 		<div className="student">
 			<ul>
@@ -52,7 +51,7 @@ const Students = () => {
 				<button onClick={handlePrevious} disabled={!previous ? true : null}>
 					Previous
 				</button>
-				<button onClick={()=>}></button>
+				<button onClick={() => {}}></button>
 
 				<button onClick={handleNext} disabled={!next ? true : null}>
 					Next
