@@ -1,0 +1,30 @@
+button {
+	cursor: pointer;
+}
+li {
+	display: flex;
+	justify-content: space-between;
+	width: 20rem;
+	list-style: none;
+	/* background-color: rebeccapurple; */
+	border: 1px solid black;
+	margin-top: 0.4rem;
+	padding: 0.4rem;
+}
+.cross {
+	text-decoration: line-through;
+}
+.app {
+	width: 80%;
+	margin: auto;
+}
+form {
+	display: flex;
+	width: 70%;
+	margin: auto;
+}
+form input {
+	padding: 0.4rem;
+	width: 30rem;
+	font-size: 2remd;
+}
