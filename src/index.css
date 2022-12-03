@@ -1,0 +1,15 @@
+:root {
+	--color-primary: #2584ff;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+testing {
+	color: #2584ff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
