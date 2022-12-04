@@ -1,10 +1,11 @@
 import React, { useReducer } from "react";
 const reducer = (state, action) => {
+	console.log(action.payload);
 	switch (action.type) {
 		case "INC":
 			return state + 1;
 		case "DEC":
-			return state - 1;
+			return state - action.payload.decreaseBy;
 		default:
 			return state;
 	}
@@ -19,7 +20,13 @@ const UseReducer = () => {
 			<div className="state">{state}</div>
 
 			<div className="decreament ">
-				<button onClick={() => dispatch({ type: "DEC" })}>-</button>
+				<button
+					onClick={() =>
+						dispatch({ type: "DEC", payload: { decreaseBy: 10 } })
+					}
+				>
+					-
+				</button>
 			</div>
 		</div>
 	);
