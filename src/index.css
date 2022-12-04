@@ -1,0 +1,14 @@
+.app {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 1rem;
+}
+button {
+	padding: 0.2rem 0.9rem;
+	font-size: 2rem;
+	width: 4rem;
+	margin: 0 2rem;
+}
+.use-reducer {
+	display: flex;
+	justify-content: center;
+}
