@@ -25,11 +25,16 @@ const Student = () => {
 					<li key={student.id} style={{ listStyle: "none" }}>
 						<div className="contents">
 							{student.complete ? (
-								<span style={{ textDecoration: "line-through" }}>
+								<span
+									style={{
+										textDecoration: "line-through",
+										color: "red",
+									}}
+								>
 									{student.name}
 								</span>
 							) : (
-								student.name
+								<span>{student.name}</span>
 							)}
 						</div>
 						<button onClick={() => dispatch(deleteStudent(student.id))}>
@@ -38,6 +43,7 @@ const Student = () => {
 						<button onClick={() => dispatch(toggleComplete(student.id))}>
 							Toggle Complete
 						</button>
+						<button onClick={() => dispatch()}>Edit</button>
 					</li>
 				);
 			})}
