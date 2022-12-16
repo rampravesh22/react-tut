@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	students: [
 		{ id: 1, name: "Rampravesh", complete: false },
-		{ id: 2, name: "Jatin", complete: true },
+		{ id: 2, name: "Jatin", complete: false },
 		{ id: 3, name: "Harsih", complete: false },
 		{ id: 4, name: "Manishi", complete: false },
 		{ id: 5, name: "Girish", complete: false },
