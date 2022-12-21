@@ -30,12 +30,36 @@ export const postApi = createApi({
 				method: "DELETE",
 			}),
 		}),
+		createPost: builder.mutation({
+			query: (newPostData) => ({
+				url: `posts/${id}`,
+				method: "POST",
+				body: newPostData,
+				headers: {
+					"content-type": "application/json; charset=UTF-8",
+				},
+			}),
+		}),
+		updatePost: builder.mutation({
+			query: (updatePostData) => {
+				const { id, ...data } = updatePostData;
+				return {
+					url: `posts${id}`,
+					method: "PUT",
+					body: data,
+					headers: {
+						"content-type": "application/json; charset=UTF-8",
+					},
+				};
+			},
+		}),
 	}),
 });
-
 export const {
 	useGetAllPostQuery,
 	useGetPostByIdQuery,
 	useGetPostByLimitQuery,
 	useDeletePostMutation,
+	useCreatePostMutation,
+	useUpdatePostMutation,
 } = postApi;
