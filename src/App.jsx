@@ -1,9 +1,10 @@
-import Register from "./Register";
+import TicTacToe from "./TicTackToe";
 
 function App() {
+	const modal = 0;
 	return (
 		<div className="app">
-			<Register></Register>
+			<TicTacToe></TicTacToe>
 		</div>
 	);
 }
