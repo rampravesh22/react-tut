@@ -16,11 +16,13 @@ function App() {
 						"http://localhost:8000/student/"
 					);
 					setStudents(response.data.results);
-					console.log(response.data.results);
+
 					setLoadin(false);
 					setShow(false);
 					setHide(true);
-				} catch (error) {}
+				} catch (error) {
+					setLoadin(false);
+				}
 			};
 			getData();
 		}, 4000);
